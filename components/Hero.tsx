@@ -71,11 +71,11 @@ export const Hero: React.FC<HeroProps> = ({ profile }) => {
           {/* Right Image Content */}
           <div className="w-48 h-48 md:w-80 md:h-80 relative shrink-0 animate-in slide-in-from-right-4 duration-1000 fade-in delay-200">
             <div className="absolute inset-0 bg-neutral-100 rounded-full md:rounded-2xl overflow-hidden shadow-lg transition-all duration-500 ease-out hover:shadow-2xl hover:scale-105 cursor-none">
-                <img 
-                  src={profile.image} 
-                  alt={profile.name} 
-                  className="w-full h-full object-cover opacity-95 grayscale transition-all duration-700 ease-in-out hover:grayscale-0"
-                />
+              <img
+                src={profile.image}
+                alt={profile.name}
+                className="w-full h-full object-cover opacity-100 transition-all duration-700 ease-in-out"
+              />
             </div>
           </div>
 

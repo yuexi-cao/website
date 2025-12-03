@@ -46,7 +46,7 @@ const PaperCard: React.FC<{ paper: Paper }> = ({ paper }) => {
         </div>
 
         {/* Interactive Abstract Section */}
-        {paper.abstract && (
+        {paper.abstract && paper.abstract.trim().length > 0 && (
           <div className="mt-2 relative z-10">
             <button 
               onClick={() => setIsExpanded(!isExpanded)}
@@ -103,12 +103,14 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({ data }) => {
 
         <div className="space-y-12">
           {/* Job Market Paper */}
-          <div className="space-y-6 animate-in slide-in-from-bottom-8 duration-1000 delay-100 fade-in">
-            <PaperCard paper={data.jobMarketPaper} />
-          </div>
+          {data.jobMarketPaper && (
+            <div className="space-y-6 animate-in slide-in-from-bottom-8 duration-1000 delay-100 fade-in">
+              <PaperCard paper={data.jobMarketPaper} />
+            </div>
+          )}
 
           {/* Publications */}
-          {data.publications.length > 0 && (
+          {data.publications && data.publications.length > 0 && (
             <div className="space-y-6 pt-8 animate-in slide-in-from-bottom-8 duration-1000 delay-200 fade-in">
               <h3 className="text-lg font-medium text-neutral-900 px-2 border-l-2 border-neutral-900 pl-4">Publications</h3>
               <div className="space-y-4">
@@ -120,7 +122,7 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({ data }) => {
           )}
 
           {/* Working Papers */}
-          {data.workingPapers.length > 0 && (
+          {data.workingPapers && data.workingPapers.length > 0 && (
             <div className="space-y-6 pt-8 animate-in slide-in-from-bottom-8 duration-1000 delay-300 fade-in">
               <h3 className="text-lg font-medium text-neutral-900 px-2 border-l-2 border-neutral-300 pl-4">Working Papers</h3>
               <div className="space-y-4">
@@ -131,16 +133,13 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({ data }) => {
             </div>
           )}
 
-           {/* Work in Progress */}
-           {data.workInProgress.length > 0 && (
+          {/* Work in Progress */}
+          {data.workInProgress && data.workInProgress.length > 0 && (
             <div className="space-y-6 pt-8 animate-in slide-in-from-bottom-8 duration-1000 delay-500 fade-in">
               <h3 className="text-lg font-medium text-neutral-900 px-2 border-l-2 border-neutral-200 pl-4">Work in Progress</h3>
-               <div className="space-y-4">
+              <div className="space-y-4">
                 {data.workInProgress.map(paper => (
-                  <div key={paper.id} className="group p-6 md:px-8 border-l-2 border-transparent hover:border-neutral-300 transition-all duration-300 hover:bg-neutral-50 cursor-default rounded-r-xl">
-                     <h4 className="text-lg text-neutral-700 group-hover:text-neutral-900 font-medium transition-colors">{paper.title}</h4>
-                     <p className="text-neutral-400 group-hover:text-neutral-500 text-sm mt-1 transition-colors">with {paper.authors.filter(a => !a.includes("Cao")).join(", ")}</p>
-                  </div>
+                  <PaperCard key={paper.id} paper={paper} />
                 ))}
               </div>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from './ui/Container';
 import { TeachingExperience } from '../types';
+import { SmartLink } from './ui/SmartLink';
 
 interface TeachingSectionProps {
   data: TeachingExperience[];
@@ -36,6 +37,16 @@ export const TeachingSection: React.FC<TeachingSectionProps> = ({ data }) => {
                 <p className="text-neutral-500 text-sm leading-relaxed border-t border-neutral-50 pt-4 mt-2">
                   {item.description}
                 </p>
+              )}
+              {item.materialsUrl && (
+                <div className="mt-3">
+                  <SmartLink
+                    href={item.materialsUrl}
+                    className="inline-flex items-center text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors"
+                  >
+                    <span>Course materials</span>
+                  </SmartLink>
+                </div>
               )}
             </div>
           ))}

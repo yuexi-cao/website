@@ -18,11 +18,11 @@ export interface Paper {
   title: string;
   authors: string[];
   publication?: string;
-  status: 'published' | 'working_paper' | 'work_in_progress';
-  abstract: string;
+  status?: 'published' | 'working_paper' | 'work_in_progress';
+  abstract?: string;
   pdfUrl?: string;
   codeUrl?: string;
-  year: string;
+  year?: string;
   isJobMarketPaper?: boolean;
 }
 
@@ -33,11 +33,12 @@ export interface TeachingExperience {
   institution: string;
   period: string;
   description?: string;
+  materialsUrl?: string;
 }
 
 export interface ResearchData {
-  jobMarketPaper: Paper;
-  publications: Paper[];
-  workingPapers: Paper[];
-  workInProgress: Paper[];
+  jobMarketPaper?: Paper;
+  publications?: Paper[];
+  workingPapers?: Paper[];
+  workInProgress?: Paper[];
 }
