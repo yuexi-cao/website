@@ -11,6 +11,7 @@ export interface Profile {
   scholarUrl?: string;
   githubUrl?: string;
   twitterUrl?: string;
+  linkedinUrl?: string;
 }
 
 export interface Paper {
@@ -21,6 +22,7 @@ export interface Paper {
   status?: 'published' | 'working_paper' | 'work_in_progress';
   abstract?: string;
   pdfUrl?: string;
+   slidesUrl?: string;
   codeUrl?: string;
   year?: string;
   isJobMarketPaper?: boolean;

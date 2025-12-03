@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container } from './ui/Container';
 import { SmartLink } from './ui/SmartLink';
 import { ResearchData, Paper } from '../types';
-import { FileTextIcon, DownloadIcon, ChevronDownIcon } from './Icons';
+import { FileTextIcon, DownloadIcon, ChevronDownIcon, ExternalLinkIcon } from './Icons';
 
 interface ResearchSectionProps {
   data: ResearchData;
@@ -71,13 +71,28 @@ const PaperCard: React.FC<{ paper: Paper }> = ({ paper }) => {
         {/* Links */}
         <div className="flex flex-wrap gap-6 mt-4 pt-4 border-t border-neutral-100 group-hover:border-neutral-200 transition-colors duration-300 relative z-10">
           {paper.pdfUrl && (
-            <SmartLink href={paper.pdfUrl} className="flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors">
+            <SmartLink
+              href={paper.pdfUrl}
+              className="flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors"
+            >
               <DownloadIcon className="w-4 h-4" />
               <span>Paper (PDF)</span>
             </SmartLink>
           )}
+          {paper.slidesUrl && (
+            <SmartLink
+              href={paper.slidesUrl}
+              className="flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors"
+            >
+              <ExternalLinkIcon className="w-4 h-4" />
+              <span>Slides</span>
+            </SmartLink>
+          )}
           {paper.codeUrl && (
-            <SmartLink href={paper.codeUrl} className="flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors">
+            <SmartLink
+              href={paper.codeUrl}
+              className="flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-neutral-900 transition-colors"
+            >
               <FileTextIcon className="w-4 h-4" />
               <span>Code & Appendix</span>
             </SmartLink>
@@ -93,10 +108,10 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({ data }) => {
     <section className="py-24 bg-white border-t border-neutral-100">
       <Container>
         <div className="mb-16 animate-in slide-in-from-bottom-8 duration-700 fade-in">
-          <h2 className="text-xs font-bold tracking-[0.2em] uppercase text-neutral-400 mb-2">
+          <h2 className="font-display text-xs font-semibold tracking-[0.2em] uppercase text-neutral-400 mb-2">
             Research
           </h2>
-          <p className="text-3xl font-light text-neutral-900">
+          <p className="font-display text-3xl font-light text-neutral-900">
             Selected Work
           </p>
         </div>
@@ -112,7 +127,7 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({ data }) => {
           {/* Publications */}
           {data.publications && data.publications.length > 0 && (
             <div className="space-y-6 pt-8 animate-in slide-in-from-bottom-8 duration-1000 delay-200 fade-in">
-              <h3 className="text-lg font-medium text-neutral-900 px-2 border-l-2 border-neutral-900 pl-4">Publications</h3>
+              <h3 className="font-display text-lg font-medium text-neutral-900 px-2 border-l-2 border-neutral-900 pl-4">Publications</h3>
               <div className="space-y-4">
                 {data.publications.map(paper => (
                   <PaperCard key={paper.id} paper={paper} />
@@ -124,7 +139,7 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({ data }) => {
           {/* Working Papers */}
           {data.workingPapers && data.workingPapers.length > 0 && (
             <div className="space-y-6 pt-8 animate-in slide-in-from-bottom-8 duration-1000 delay-300 fade-in">
-              <h3 className="text-lg font-medium text-neutral-900 px-2 border-l-2 border-neutral-300 pl-4">Working Papers</h3>
+              <h3 className="font-display text-lg font-medium text-neutral-900 px-2 border-l-2 border-neutral-300 pl-4">Working Papers</h3>
               <div className="space-y-4">
                 {data.workingPapers.map(paper => (
                   <PaperCard key={paper.id} paper={paper} />
@@ -136,7 +151,7 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({ data }) => {
           {/* Work in Progress */}
           {data.workInProgress && data.workInProgress.length > 0 && (
             <div className="space-y-6 pt-8 animate-in slide-in-from-bottom-8 duration-1000 delay-500 fade-in">
-              <h3 className="text-lg font-medium text-neutral-900 px-2 border-l-2 border-neutral-200 pl-4">Work in Progress</h3>
+              <h3 className="font-display text-lg font-medium text-neutral-900 px-2 border-l-2 border-neutral-200 pl-4">Work in Progress</h3>
               <div className="space-y-4">
                 {data.workInProgress.map(paper => (
                   <PaperCard key={paper.id} paper={paper} />

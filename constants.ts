@@ -35,6 +35,7 @@ export const PROFILE: Profile = {
 
   // CV: 可以是 "assets/cv.pdf"（本地）或 "https://website.com/cv.pdf"（外链）
   cvUrl: "assets/cv.pdf",
+  linkedinUrl: "https://www.linkedin.com/in/yuexi-cao-067914324/",
 };
 
 export const RESEARCH_DATA: ResearchData = {
@@ -77,6 +78,7 @@ export const RESEARCH_DATA: ResearchData = {
   //     pdfUrl: "https://doi.org/xxxxxxx",
   //     // 可选的代码/附录链接
   //     codeUrl: "https://github.com/your-repo",
+  //     slidesUrl: "https://www.google.com",
   //   },
   // ],
 
@@ -92,7 +94,8 @@ export const RESEARCH_DATA: ResearchData = {
       status: "working_paper",
       abstract:
         "This paper examines whether multi-location business networks extend the geographic reach of innovation spillovers from multinational enterprises (MNEs). Using Orbis ownership links to construct Chinese firms’ cross-city networks and exploiting first-time MNE entry from FDI Markets in a stacked difference-in-differences design, we show that affiliates located in non-entry cities experience sizeable and persistent gains in innovation—about 12 percent on average—after an MNE enters another city within the same network. Patent citation patterns reveal that these affiliates increase citations to both the entrant-city affiliate and the MNE itself, indicating cross-regional knowledge transmission rather than internal reallocation of R&D. Spillover strength is greater when MNE technologies are more advanced or technologically distant from domestic firms, and when affiliates have lower absorptive capacity or face lower internal coordination frictions. The findings highlight multi-location business networks as important channels for overcoming geographic frictions in knowledge diffusion and for amplifying the domestic innovation returns to foreign investment.",
-      // 预留：工作论文 PDF 链接（本地或外链）
+      slidesUrl: " ",
+        // 预留：工作论文 PDF 链接（本地或外链）
       // pdfUrl: "papers/internal_networks.pdf",
       // 预留：代码仓库链接
       // codeUrl: "https://github.com/your-repo/internal-networks",

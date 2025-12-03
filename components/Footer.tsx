@@ -36,6 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ profile }) => {
              <h2 className="text-2xl text-white font-light tracking-tight">Links</h2>
              <div className="flex flex-col md:items-end gap-4">
                 <SmartLink href={profile.cvUrl} className="hover:text-white transition-colors">Curriculum Vitae</SmartLink>
+                {profile.linkedinUrl && <SmartLink href={profile.linkedinUrl} className="hover:text-white transition-colors">LinkedIn</SmartLink>}
                 {profile.scholarUrl && <SmartLink href={profile.scholarUrl} className="hover:text-white transition-colors">Google Scholar</SmartLink>}
                 {profile.githubUrl && <SmartLink href={profile.githubUrl} className="hover:text-white transition-colors">GitHub</SmartLink>}
              </div>

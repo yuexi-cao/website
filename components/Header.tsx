@@ -32,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection, cvUrl }) => {
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, '#home')}
-          className="text-lg font-medium tracking-tight text-neutral-900"
+          className="font-display text-lg font-medium tracking-tight text-neutral-900"
         >
           Yuexi Cao
         </a>
@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection, cvUrl }) => {
             href={cvUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium px-4 py-2 border border-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-300"
+            className="text-sm font-medium px-4 py-2 rounded-full border border-[#f5e6dc] bg-[#fdf7f3] text-[#7a5c4b] shadow-[0_6px_18px_rgba(120,85,61,0.08)] hover:bg-[#f2e2d7] hover:border-[#e4c8b3] hover:shadow-[0_10px_30px_rgba(120,85,61,0.14)] transition-all duration-300"
           >
             CV
           </a>

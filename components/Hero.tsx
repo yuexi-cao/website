@@ -17,7 +17,7 @@ export const Hero: React.FC<HeroProps> = ({ profile }) => {
           {/* Left Text Content */}
           <div className="flex-1 space-y-8 animate-in slide-in-from-left-4 duration-700 fade-in">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-neutral-900">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-neutral-900">
                 {profile.name}
               </h1>
               <div className="space-y-1">
